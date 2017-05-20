@@ -22,9 +22,9 @@ RSpec.feature "Visitor" do
     click_link("Register")
 
     expect(current_path).to eq(new_user_path)
-    expect(current_page).to have_content("Create a new account")
-    # expect(current_page).to have_content("Email")
-    expect(current_page).to have_content("Password")
-    expect(current_page).to have_content("Password Confirmation")
+    expect(page).to have_content("Create a new account")
+    expect(page).to have_content("Email")
+    expect(page).to have_content("Password")
+    expect(page).to have_content("Password confirmation")
   end
 end
