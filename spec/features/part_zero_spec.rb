@@ -23,7 +23,8 @@ RSpec.feature "Visitor" do
 
     expect(current_path).to eq(new_user_path)
     expect(current_page).to have_content("Create a new account")
-    expect(current_page).to have_content("Email")
+    # expect(current_page).to have_content("Email")
     expect(current_page).to have_content("Password")
+    expect(current_page).to have_content("Password Confirmation")
   end
 end
