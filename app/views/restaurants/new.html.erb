@@ -1,0 +1,14 @@
+
+  <%= form_for ([@user, @restaurant]), remote: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :cuisine %>
+    <%= f.text_field :cuisine %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+    <%= f.submit "Add restaurant" %>
+  <% end %>

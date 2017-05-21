@@ -7,9 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      flash[:success] = "You are now logged in."
       redirect_to root_path
     else
-      flash[:warning] = "Sorry, but that email has already been taken."
+      flash.now[:danger] = "Sorry, but that email has already been taken."
       render :new
     end
   end
