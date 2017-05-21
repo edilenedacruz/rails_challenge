@@ -9,11 +9,11 @@
     <%= link_to "Add a Restaurant", new_user_restaurant_path(current_user), remote: true %>
   </div>
     <div id="restaurant-form" style="display:none">
+      <% current_user.restaurants.each do |restaurant| %>
+      <%= restaurant.name %>
+      <% end %>
 
     </div>
 
-  <% current_user.restaurants.each do |restaurant| %>
-    <%= restaurant.name %>
-  <% end %>
 
 <% end %>
