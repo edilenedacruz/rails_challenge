@@ -1,8 +1,13 @@
-<% if current_user %>
+<% if !current_user %>
+<%= link_to "Register", new_user_path %>
+<%= link_to "Login", login_path %>
+<% else %>
   <h1>Welcome: <%= current_user.email %></h1>
   <%= link_to "Logout", logout_path %>
   <h4>List of all Restaurants</h4>
-<% else %>
-  <%= link_to "Register", new_user_path %>
-  <%= link_to "Login", login_path %>
+  <%= link_to "Add a Restaurant", new_restaurant_path  %>
+
+  <%= form_for @restaurant do |f| %>
+
+
 <% end %>
