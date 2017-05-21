@@ -23,6 +23,6 @@ RSpec.feature "User can logout" do
     click_link("Logout")
     expect(page).to have_content("Register")
     expect(page).to have_content("Login")
-    expect
+    expect(page).to_not have_content("Welcome: #{user.email}")
   end
 end
