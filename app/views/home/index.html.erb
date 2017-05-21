@@ -6,11 +6,14 @@
   <%= link_to "Logout", logout_path %>
   <h4>List of all Restaurants</h4>
   <div id="restaurant-link">
-    <%= link_to "Add a Restaurant", new_restaurant_path %>
+    <%= link_to "Add a Restaurant", new_user_restaurant_path(current_user), remote: true %>
   </div>
+    <div id="restaurant-form" style="display:none">
+
+    </div>
 
   <% current_user.restaurants.each do |restaurant| %>
-  <%= restaurant.name %>
+    <%= restaurant.name %>
   <% end %>
 
-  <% end %>
+<% end %>

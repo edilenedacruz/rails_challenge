@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
+  # respond_to :html, :js
+
   def new
-    # binding.pry
     @user = current_user
     @restaurant = Restaurant.new
   end
