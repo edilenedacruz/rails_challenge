@@ -1,0 +1,8 @@
+<% if current_user %>
+  <h1>Welcome: <%= current_user.email %></h1>
+  <%= link_to "Logout", logout_path %>
+  <h4>List of all Restaurants</h4>
+<% else %>
+  <%= link_to "Register", new_user_path %>
+  <%= link_to "Login", login_path %>
+<% end %>
