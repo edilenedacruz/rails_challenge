@@ -1,3 +1,6 @@
 $(document).ready(funtion(){
-  $('#restaurant-form').
+  $('#restaurant-link').on('click', function(){
+    event.preventDefault();
+    $('#restaurant-form').toggle()
+  })
 })

@@ -5,22 +5,7 @@
   <h1>Welcome: <%= current_user.email %></h1>
   <%= link_to "Logout", logout_path %>
   <h4>List of all Restaurants</h4>
-  <%= link_to "Add a Restaurant", new_user_restaurant_path  %>
+  <div id="restaurant-link">
+    <%= link_to "Add a Restaurant", new_restaurant_path %>
+  </div>
   <% end %>
-
-
-<div id="restaurant-form" class="" style="display:none">
-  <%= form_for [@user, @restaurant] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :cuisine %>
-  <%= f.text_field :cuisine %>
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-  <%= f.label :state %>
-  <%= f.text_field :state %>
-  <%= f.label :zip %>
-  <%= f.text_field :zip %>
-  <%= f.submit "Add restaurant" %>
-  <% end %>
-</div>
