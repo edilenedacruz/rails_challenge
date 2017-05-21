@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
+      flash[:warning] = "Your login information is incorrect."
       render :new
     end
   end
