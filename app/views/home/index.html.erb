@@ -1,19 +1,18 @@
+<div class="container">
 <% if !current_user %>
-<%= link_to "Register", new_user_path %>
-<%= link_to "Login", login_path %>
+  <%= link_to "Register", new_user_path %>
+  <%= link_to "Login", login_path %>
 <% else %>
-  <h1>Welcome: <%= current_user.email %></h1>
   <%= link_to "Logout", logout_path %>
-  <h4>List of all Restaurants</h4>
-  <div id="restaurant-link">
-    <%= link_to "Add a Restaurant", new_user_restaurant_path(current_user), remote: true %>
-  </div>
-    <div id="restaurant-form" style="display:none">
+    <h1>Welcome: <%= current_user.email %></h1>
+    <div id="restaurant-form">
+      <h4>List of all Restaurants</h4>
       <% current_user.restaurants.each do |restaurant| %>
-      <%= restaurant.name %>
+        <%= restaurant.name %><br>
       <% end %>
-
     </div>
-
-
+    <div id="restaurant-link">
+      <%= link_to "Add a Restaurant", new_user_restaurant_path(current_user), remote: true %>
+    </div>
 <% end %>
+</div>
